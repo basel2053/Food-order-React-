@@ -11,7 +11,7 @@ const Header = () => {
 				<img
 					src='platter-200.jpg'
 					alt='banner-img'
-					className=' h-full w-[100%] -translate-x-4 -translate-y-16 -rotate-[4deg] z-0  '
+					className=' h-full w-[100%] -translate-x-4 -translate-y-16 -rotate-[4deg] z-0 object-cover'
 				/>
 			</div>
 		</Fragment>
