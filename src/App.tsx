@@ -1,10 +1,13 @@
-import './App.css';
+import { Fragment } from 'react';
+import Header from './Components/Header';
+import Modal from './Components/Modal';
 
 function App() {
 	return (
-		<div className='App'>
-			<h1 className='text-7xl font-bold underline text-blue-600'>Hello world</h1>
-		</div>
+		<Fragment>
+			<Header />
+			<Modal />
+		</Fragment>
 	);
 }
 
