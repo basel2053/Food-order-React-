@@ -16,11 +16,11 @@ const MealItem = (props: IMeal) => {
 				<h4 className='text-[#ad5502] font-bold text-xl my-1'>${props.price}</h4>
 			</div>
 			<div className='meal-control flex flex-col justify-center items-center w-[12%]'>
-				<div className='flex items-center justify-around mb-3'>
+				<div className='flex items-center justify-between mb-3'>
 					<p className='font-bold'>Amount</p>
 					<input type='number' className='shadow w-2/6 pl-2' value={0} />
 				</div>
-				<Button className='w-5/6 '>+ Add</Button>
+				<Button className='w-5/6 font-bold'>+ Add</Button>
 			</div>
 		</div>
 	);

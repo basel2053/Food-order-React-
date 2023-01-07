@@ -1,14 +1,16 @@
 import { Fragment } from 'react';
 import Header from './Components/Header';
-import Modal from './Components/Modal';
+import Summary from './Components/Summary';
 import Meals from './Components/Meals/Meals';
+import Modal from './Components/Order/Modal';
 
 function App() {
 	return (
 		<Fragment>
 			<Header />
-			<Modal />
+			<Summary />
 			<Meals />
+			<Modal />
 		</Fragment>
 	);
 }

@@ -1,6 +1,6 @@
 import Card from './UI/Card';
 
-const Modal = () => {
+const Summary = () => {
 	return (
 		<Card className='text-center text-white bg-neutral-700 w-[39%] m-auto -mt-36 z-20 relative'>
 			<h2 className='text-3xl font-bold mb-5'>Delicious Food, Delivered To You</h2>
@@ -14,4 +14,4 @@ const Modal = () => {
 		</Card>
 	);
 };
-export default Modal;
+export default Summary;
