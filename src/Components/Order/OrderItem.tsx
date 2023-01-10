@@ -18,10 +18,10 @@ const OrderItem = (props: IOrderItem) => {
 				</div>
 			</div>
 			<div className='flex items-center gap-2'>
-				<button className='op-btn' onClick={props.onAdd}>
+				<button className='op-btn' onClick={props.onRemove}>
 					&#8722;
 				</button>
-				<button className='op-btn' onClick={props.onRemove}>
+				<button className='op-btn' onClick={props.onAdd}>
 					+
 				</button>
 			</div>

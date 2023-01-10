@@ -22,7 +22,6 @@ const MealItem = (props: IMeal) => {
 			setIsValid(false);
 			return;
 		}
-		console.log(enteredAmount);
 
 		mealCtx.addItem({
 			id: props.id,

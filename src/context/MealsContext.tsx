@@ -32,7 +32,7 @@ interface IMealState {
 const defaultMealsState = { items: [], totalAmount: 0 };
 
 const mealReducer = (state: IMealState, action: IMealAction) => {
-	if (action.type == 'ADD' && action.item) {
+	if (action.type === MealActionType.ADD && action.item) {
 		const updatedTotalAmount = state.totalAmount + action.item.price * action.item.amount;
 		const exisitingCartItemIndex = state.items.findIndex(item => item.id === action.item?.id);
 		const exisitingCartItem = state.items[exisitingCartItemIndex];
@@ -48,15 +48,30 @@ const mealReducer = (state: IMealState, action: IMealAction) => {
 			items: updatedItems,
 			totalAmount: updatedTotalAmount,
 		};
+	} else if (action.type === MealActionType.REMOVE && action.id) {
+		const exisitingCartItemIndex = state.items.findIndex(item => item.id === action.id);
+		const exisitingItem = state.items[exisitingCartItemIndex];
+		const updatedTotalAmount = state.totalAmount - exisitingItem.price;
+		let updatedItems;
+		if (exisitingItem.amount === 1) {
+			updatedItems = state.items.filter(item => item.id !== action.id);
+		} else {
+			const updatedItem = { ...exisitingItem, amount: exisitingItem.amount - 1 };
+			updatedItems = [...state.items];
+			updatedItems[exisitingCartItemIndex] = updatedItem;
+		}
+		return {
+			items: updatedItems,
+			totalAmount: updatedTotalAmount,
+		};
 	}
+
 	return defaultMealsState;
 };
 
 export const MealsContextProvider = (props: { children: ReactNode }) => {
 	const [mealState, dispatchMeal] = useReducer(mealReducer, defaultMealsState);
 	const addItemToCartHandler = (item: IMeal) => {
-		console.log(item);
-
 		dispatchMeal({ type: MealActionType.ADD, item });
 	};
 	const removeItemToCartHandler = (id: string) => {

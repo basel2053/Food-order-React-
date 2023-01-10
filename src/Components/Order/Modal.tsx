@@ -16,8 +16,12 @@ const ModalOverlay = (props: { onCloseOrder: React.MouseEventHandler }) => {
 	const totalAmount = mealsCtx.totalAmount.toFixed(2);
 	const hasitems = mealsCtx.items.length > 0;
 
-	const cartItemRemoveHandler = (id: string) => {};
-	const cartItemAddHandler = (item: IMeal) => {};
+	const cartItemRemoveHandler = (id: string) => {
+		mealsCtx.removeItem(id);
+	};
+	const cartItemAddHandler = (item: IMeal) => {
+		mealsCtx.addItem({ ...item, amount: 1 });
+	};
 
 	const orderItems = (
 		<ul>
