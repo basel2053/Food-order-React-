@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+	width: 6px;
+	border-radius: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+	background: #555;
+}
+
 @layer components {
 	.op-btn {
 		@apply text-[#ad5502] text-xl font-bold border rounded-md border-[#b94517] px-4 hover:bg-primary hover:text-white hover:rounded transition-all;

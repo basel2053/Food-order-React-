@@ -1,17 +1,25 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import Header from './Components/Header';
 import Summary from './Components/Summary';
 import Meals from './Components/Meals/Meals';
 import Modal from './Components/Order/Modal';
+import { MealsContextProvider } from './context/MealsContext';
 
 function App() {
+	const [showModal, setShowModal] = useState(false);
+	const onOrderHandler = () => {
+		setShowModal(true);
+	};
+	const onCloseOrderHandler = () => {
+		setShowModal(false);
+	};
 	return (
-		<Fragment>
-			<Header />
+		<MealsContextProvider>
+			<Header onOrder={onOrderHandler} />
 			<Summary />
 			<Meals />
-			<Modal />
-		</Fragment>
+			{showModal && <Modal onCloseOrder={onCloseOrderHandler} />}
+		</MealsContextProvider>
 	);
 }
 
