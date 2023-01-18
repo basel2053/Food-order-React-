@@ -1,28 +1,127 @@
 {
-	"meals": [
-		{
-			"id": "m1",
-			"name": "Sushi",
-			"description": "Finest fish and veggies",
-			"price": 22.99
-		},
-		{
-			"id": "m2",
-			"name": "Schnitzel",
-			"description": "A german specialty!",
-			"price": 16.5
-		},
-		{
-			"id": "m3",
-			"name": "Barbecue Burger",
-			"description": "American, raw, meaty",
-			"price": 12.99
-		},
-		{
-			"id": "m4",
-			"name": "Green Bowl",
-			"description": "Healthy...and green...",
-			"price": 18.99
-		}
-	]
+  "meals": [
+    {
+      "id": "m1",
+      "name": "Sushi",
+      "description": "Finest fish and veggies",
+      "price": 22.99
+    },
+    {
+      "id": "m2",
+      "name": "Schnitzel",
+      "description": "A german specialty!",
+      "price": 16.5
+    },
+    {
+      "id": "m3",
+      "name": "Barbecue Burger",
+      "description": "American, raw, meaty",
+      "price": 12.99
+    },
+    {
+      "id": "m4",
+      "name": "Green Bowl",
+      "description": "Healthy...and green...",
+      "price": 18.99
+    }
+  ],
+  "orders": [
+    {
+      "user": {
+        "name": "bassel",
+        "street": "warsha st",
+        "postal": "54231",
+        "city": "Port Said"
+      },
+      "orderedItems": [
+        {
+          "id": "m1",
+          "name": "Sushi",
+          "amount": 2,
+          "price": 22.99
+        },
+        {
+          "id": "m3",
+          "name": "Barbecue Burger",
+          "amount": 1,
+          "price": 12.99
+        }
+      ],
+      "id": 1
+    },
+    {
+      "user": {
+        "name": "bassel2",
+        "street": "warsha st",
+        "postal": "54231",
+        "city": "Port Said"
+      },
+      "orderedItems": [
+        {
+          "id": "m1",
+          "name": "Sushi",
+          "amount": 2,
+          "price": 22.99
+        },
+        {
+          "id": "m3",
+          "name": "Barbecue Burger",
+          "amount": 1,
+          "price": 12.99
+        }
+      ],
+      "id": 2
+    },
+    {
+      "user": {
+        "name": "Bassel",
+        "street": "Test",
+        "postal": "12345",
+        "city": "testing"
+      },
+      "orderedItems": [
+        {
+          "id": "m1",
+          "name": "Sushi",
+          "amount": 1,
+          "price": 22.99
+        }
+      ],
+      "id": 3
+    },
+    {
+      "user": {
+        "name": "dsad",
+        "street": "dasd",
+        "postal": "21342",
+        "city": "dsad"
+      },
+      "orderedItems": [
+        {
+          "id": "m1",
+          "name": "Sushi",
+          "amount": 1,
+          "price": 22.99
+        }
+      ],
+      "id": 4
+    },
+    {
+      "user": {
+        "name": "dsad",
+        "street": "dsads",
+        "postal": "21232",
+        "city": "dsadsa"
+      },
+      "orderedItems": [
+        {
+          "id": "m1",
+          "name": "Sushi",
+          "amount": 1,
+          "price": 22.99
+        }
+      ],
+      "id": 5
+    }
+  ]
 }

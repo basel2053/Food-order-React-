@@ -4,11 +4,13 @@ const MealsContext = createContext({
 	totalAmount: 0,
 	addItem: (item: IMeal) => {},
 	removeItem: (id: string) => {},
+	clearOrder: () => {},
 });
 
 enum MealActionType {
 	ADD = 'ADD',
 	REMOVE = 'REMOVE',
+	CLEAR = 'CLEAR',
 }
 
 export interface IMeal {
@@ -65,7 +67,9 @@ const mealReducer = (state: IMealState, action: IMealAction) => {
 			totalAmount: updatedTotalAmount,
 		};
 	}
-
+	if (action.type === MealActionType.CLEAR) {
+		return defaultMealsState;
+	}
 	return defaultMealsState;
 };
 
@@ -77,6 +81,9 @@ export const MealsContextProvider = (props: { children: ReactNode }) => {
 	const removeItemToCartHandler = (id: string) => {
 		dispatchMeal({ type: MealActionType.REMOVE, id });
 	};
+	const clearOrderHandler = () => {
+		dispatchMeal({ type: MealActionType.CLEAR });
+	};
 	return (
 		<MealsContext.Provider
 			value={{
@@ -84,6 +91,7 @@ export const MealsContextProvider = (props: { children: ReactNode }) => {
 				totalAmount: mealState.totalAmount,
 				addItem: addItemToCartHandler,
 				removeItem: removeItemToCartHandler,
+				clearOrder: clearOrderHandler,
 			}}
 		>
 			{props.children}
